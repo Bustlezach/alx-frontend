@@ -28,7 +28,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     --section-padding: 5rem 0;
     --section-header-padding: 0 0 3rem;
     --section-body-padding: 0 0 3rem;
-    --section-footer-padding: 0 0 3rem;
+    --section-footer-padding: 3rem 0 0;
     --section-footer-align: center;
     --footer-padding: 5rem 0 1rem;
 }
@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a:link {
-    color: var(--color-black);
+    color: var(--text-color);
     text-decoration: none;
 }
 

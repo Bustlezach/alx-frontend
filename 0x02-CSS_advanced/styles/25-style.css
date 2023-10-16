@@ -28,7 +28,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     --section-padding: 5rem 0;
     --section-header-padding: 0 0 3rem;
     --section-body-padding: 0 0 3rem;
-    --section-footer-padding: 0 0 3rem;
+    --section-footer-padding: 3rem 0 0;
     --section-footer-align: center;
     --footer-padding: 5rem 0 1rem;
     --nav-item-font-family: var(--font-family-title);
@@ -41,20 +41,13 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     --section-tagline-margin: 0;
     --button-display: inline-block;
     --button-padding: 1.5rem 3rem;
-    --button-border: 0.2rem solid var(--color-primary)
+    --button-border: 0.2rem solid var(--color-primary);
     --button-color: var(--color-black);
     --button-text-decoration: none;
     --button-font-size: var(--font-size-large);
     --button-hover-color: var(--color-white);
     --button-hover-text-decoration: none;
     --button-hover-background: var(--color-primary);
-}
-
-[data-section-theme=“dark”] {
-    --text-color: var(--color-white);
-    --section-title-color: var(--color-white);
-    background-color: var(--color-black);
-    --button-color: var(--color-white);
 }
 
 *, *::after, *::before {
@@ -74,13 +67,20 @@ body {
     line-height: var(--line-height-base);
 }
 
+[data-section-theme="dark"] {
+    --text-color: var(--color-white);
+    --section-title-color: var(--color-white);
+    background-color: var(--color-black);
+    --button-color: var(--color-white);
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-family-title);
     font-weight: var(--font-weight-bold);
 }
 
 a:link {
-    color: var(--color-black);
+    color: var(--text-color);
     text-decoration: none;
 }
 
@@ -96,6 +96,21 @@ a:active {
     background-color: var(--color-light-grey);
 }
 
+.button {
+    display: var(--button-display);
+    padding: var(--button-padding);
+    border: var(--button-border);
+    font-size: var(--button-font-size);
+    color: var(--button-color);
+    text-decoration: var(--button-text-decoration);
+}
+
+.button:hover {
+    color: var(--button-hover-color);
+    text-decoration: var(--button-hover-text-decoration);
+    background-color: var(--button-hover-background);
+}
+
 .visually-hidden {
     display: none;
 }
@@ -104,10 +119,23 @@ a:active {
     color: var(--color-primary);
 }
 
+.card-services .card-title {
+    margin: 0;
+}
+.card-services a {
+    display: block;
+    padding: 2rem;
+    background-color: var(--color-light-grey);
+}
+.card-services a:hover {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    text-decoration: none;
+}
+
 .section {
     padding: var(--section-padding);
 }
-
 .section-header {
     text-align: var(--section-header-align);
     padding: var(--section-header-padding);
@@ -138,45 +166,6 @@ a:active {
     margin: var(--section-tagline-margin);
 }
 
-.container {
-    width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.footer {
-    padding: var(--footer-padding);
-}
-
-.navbar-menu {
-    float: right;
-}
-
-.nav {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-align: center;
-}
-
-.nav .nav-item {
-    font-family: var(--nav-item-font-family);
-    font-weight: var(--nav-item-font-weight);
-    font-size: var(--nav-item-font-size);
-    letter-spacing: var(--nav-item-letter-spacing);
-    display: var(--nav-item-display);
-    margin: var(--nav-item-margin);
-}
-
-.nav .nav-link {
-    display: block;
-    padding: 0.5rem 1rem;
-}
-
-.nav .nav-link:hover {
-    color: var(--nav-item-link-hover);
-}
-
 .row::after {
     content: "";
     display: table;
@@ -197,9 +186,15 @@ ul.row {
     width: 50%;
 }
 
-[class^="col-"] {
+[class^='col-'] {
     float: left;
     padding: 0.5rem;
+}
+
+.container {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .footer-copyright {
@@ -208,7 +203,11 @@ ul.row {
     color: var(--text-color);
 }
 
-ul.footer {
+.footer {
+    padding: var(--footer-padding);
+}
+
+.footer ul {
     text-align: right;
 }
 
@@ -217,40 +216,39 @@ ul.footer {
 }
 
 .social-link {
-    display: block;
+display: block;
 }
 
 .social-link > svg {
+    /*The fill property in CSS is for filling in the color of a SVG shape.*/
     fill: var(--text-color);
 }
 
-.card-services .card-title {
+.nav {
     margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
 }
 
-.card-services a {
+.navbar-menu {
+    float: right;
+}
+
+.nav .nav-item {
+    font-family: var(--nav-item-font-family);
+    font-weight: var(--nav-item-font-weight);
+    font-size: var(--nav-item-font-size);
+    letter-spacing: var(--nav-item-letter-spacing);
+    display: var(--nav-item-display);
+    margin: var(--nav-item-margin);
+}
+
+.nav .nav-link {
     display: block;
-    padding: 2rem;
-    background-color: var(--color-light-grey);
+    padding: 0.5rem 1rem;
 }
 
-.card-services a:hover {
-    color: var(--color-white);
-    background-color: var(--color-primary);
-    text-decoration: none;
-}
-
-.button {
-    display: var(--button-display);
-    padding: var(--button-padding);
-    border-style: var(--button-border);
-    font-size: var(--button-font-size);
-    color: var(--button-color);
-    text-decoration: var(--button-text-decoration);
-}
-
-.button:hover {
-    color: var(--button-hover-color);
-    text-decoration: var(--button-hover-text-decoration);
-    background: var(--button-hover-background);
+.nav .nav-link:hover {
+    color: var(--nav-item-link-hover);
 }
